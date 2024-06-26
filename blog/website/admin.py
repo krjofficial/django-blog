@@ -6,6 +6,8 @@ from .models import Blog
 
 @admin.register(Blog)
 
+# Admin Fields
+
 class BlogAdmin(admin.ModelAdmin):
   search_fields=Blog.SearchableFields
   list_filter = Blog.FilterFields
