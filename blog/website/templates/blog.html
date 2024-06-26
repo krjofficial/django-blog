@@ -1,0 +1,20 @@
+{%extends 'base.html'%} {%block content%}
+
+<h1>{{user_blog.title}}</h1>
+
+<div class="card">
+  <div class="card-header">
+    <strong>Written by {{user_blog.author}}</strong>
+  </div>
+  <div class="card-body" style="font-size: 20px">
+    <p class="card-text">{{user_blog.content}}</p>
+  </div>
+</div>
+
+<br/> <br/>
+
+<a href="{% url 'home'%}" class="btn btn-secondary">Back</a>
+<a href="{% url 'update_blog' user_blog.id %}" class="btn btn-secondary">Update</a>
+<a href="{% url 'delete_blog' user_blog.id %}" class="btn btn-danger">Delete</a>
+
+{%endblock%}
