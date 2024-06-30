@@ -13,7 +13,7 @@ dataBase = mysql.connector.connect(
 cursorObject = dataBase.cursor()
 
 # create a database
-cursorObject.execute("CREATE DATABASE blogdb")
+cursorObject.execute("CREATE DATABASE blogdb2")
 
 print("Database created")
 
