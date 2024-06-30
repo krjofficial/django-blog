@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'website.Author'
+# specifies the model that should be used for user authentication.
+
+LOGIN_URL = '/home/'
+# for @login_required
+# redirect to this url if the user is not logged in
 
 # Application definition
 

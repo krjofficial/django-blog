@@ -1,17 +1,18 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Blog 
+from .models import Blog, Author
 
 
 # Create a Registration Form
 class SignUpForm(UserCreationForm):
   username = forms.CharField(label="", widget = forms.TextInput(attrs={'class':'form-control', 'placeholder':'Username'}), max_length="20")
   email = forms.EmailField(label="", widget = forms.TextInput(attrs={'class':'form-control', 'placeholder':'Email Address'}), max_length="20")
+  bio = forms.CharField(label="", widget = forms.TextInput(attrs={'class':'form-control', 'placeholder':'Write Something About you'}), max_length="200")
 
   class Meta:
-    model = User 
-    fields = ('username', 'email', 'password1', 'password2')
+    model = Author 
+    fields = ('username', 'email', 'bio', 'password1', 'password2')
 
   def __init__(self, *args, **kwargs):
     super(SignUpForm, self).__init__(*args, **kwargs)
@@ -48,8 +49,7 @@ class SignUpForm(UserCreationForm):
 class AddBlog(forms.ModelForm):
   title = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Title", "class":"form-control"}), label="")
   content = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Content", "class":"form-control"}), label="")
-  author = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Author", "class":"form-control"}), label="")
- 
+    
   class Meta:
     model = Blog
     fields = ['title', 'content', 'author']

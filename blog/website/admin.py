@@ -1,11 +1,10 @@
 from django.contrib import admin
-from .models import Blog 
+from .models import Blog, Author
 # Register your models here.
 
 
-
+admin.site.register(Author)
 @admin.register(Blog)
-
 # Admin Fields
 
 class BlogAdmin(admin.ModelAdmin):
