@@ -5,6 +5,7 @@ def current_author(request):
   if request.user.is_authenticated:
     try:
       author = Author.objects.get(username=request.user)
+      return { "current_author": author }
     except Author.DoesNotExist:
-      author = None
-    return { "current_author": author}
+      return {}
+  return {}
