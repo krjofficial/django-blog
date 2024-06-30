@@ -11,6 +11,6 @@ urlpatterns = [
     path('delete_blog/<int:pk>', views.delete_blog, name='delete_blog'),
     path('add_blog' , views.add_blog, name='add_blog'),
     path('update_blog/<int:pk>', views.update_blog, name='update_blog'),
-    path('author/<int:pk>', views.view_profile, name='author'),
+    path('author/<int:pk>', views.view_profile, name='view_profile'),
     path('edit_profile/<int:pk>', views.edit_profile, name='edit_profile')
 ]

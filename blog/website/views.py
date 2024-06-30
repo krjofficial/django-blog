@@ -35,7 +35,7 @@ def logout_user(request):
 
 
 def register_user(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return redirect("home") # redirect to home page if user is logged in
 
 

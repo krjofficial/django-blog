@@ -49,7 +49,7 @@ class SignUpForm(UserCreationForm):
 class AddBlog(forms.ModelForm):
   title = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Title", "class":"form-control"}), label="")
   content = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Content", "class":"form-control"}), label="")
-    
+  
   class Meta:
     model = Blog
     fields = ['title', 'content', 'author']
